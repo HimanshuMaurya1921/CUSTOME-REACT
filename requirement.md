@@ -544,7 +544,7 @@ export function prerenderPlugin() {
           rollupOptions: {
             input: Object.fromEntries(routes.map(r => [r.name, r.component])),
             output: {
-              format: 'cjs' // Ensure output is CJS for easy Node importing
+              format: 'esm' // Native ESM is preferred for modern Node.js import()
             }
           }
         }
@@ -586,6 +586,12 @@ export function prerenderPlugin() {
 
       // 6. Clean up raw asset files (now inlined in HTML)
       cleanupAssets(distDir)
+      
+      // 7. Clean up temporary SSR build
+      if (fs.existsSync(ssrDistDir)) {
+        fs.rmSync(ssrDistDir, { recursive: true, force: true })
+        console.log('  🗑️  Cleaned up dist-ssr/ directory')
+      }
 
       console.log('\n✅ Pre-render complete.\n')
     }

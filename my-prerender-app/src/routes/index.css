@@ -1,0 +1,13 @@
+/* src/routes/index.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 { color: #1a73e8; }
+nav a { color: #1a73e8; text-decoration: none; font-weight: bold; }

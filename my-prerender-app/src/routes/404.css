@@ -1,0 +1,16 @@
+/* src/routes/404.css */
+.not-found-container {
+  text-align: center;
+  padding: 100px;
+  color: #5f6368;
+}
+
+h1 {
+  font-size: 72px;
+  margin-bottom: 0;
+  color: #dadce0;
+}
+
+p {
+  font-size: 24px;
+}
